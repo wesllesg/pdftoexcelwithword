@@ -1,3 +1,6 @@
+'pathAndFileName = “C:\…\Power Spreadsheets Examples\Statistical Tables.pdf”
+
+Private sub convertpd (pathAndFileName as string)
 Dim myWorksheet As Worksheet
 Dim wordApp As Word.Application
 Dim myWshShell As wshShell
@@ -9,7 +12,6 @@ Set myWorksheet = ActiveWorkbook.Worksheets(“Word Early Binding”)
 Set wordApp = New Word.Application
 Set myWshShell = New wshShell
 
-pathAndFileName = “C:\…\Power Spreadsheets Examples\Statistical Tables.pdf”
 wordVersion = wordApp.Version
 
 registryKey = “HKCU\SOFTWARE\Microsoft\Office\” & wordVersion & “\Word\Options\”
@@ -26,3 +28,4 @@ PasteSpecial Format:=”Text”
 wordApp.Quit SaveChanges:=wdDoNotSaveChanges
 Set wordApp = Nothing
 Set myWshShell = Nothing
+End Sub
